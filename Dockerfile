@@ -1,11 +1,10 @@
 FROM ubuntu:latest
-MAINTAINER docker@ekito.fr
 
 # Add crontab file in the cron directory
-ADD crontab /etc/cron.d/hello-cron
+ADD crontab /etc/cron.d/consoleapp/console-app-cron
 
 # Give execution rights on the cron job
-RUN chmod 0644 /etc/cron.d/hello-cron
+RUN chmod 0644 /etc/cron.d/consoleapp/console-app-cron
 
 # Create the log file to be able to run tail
 RUN touch /var/log/cron.log
