@@ -7,12 +7,13 @@ ADD crontab /etc/cron.d/consoleapp/console-app-cron
 RUN chmod 0644 /etc/cron.d/consoleapp/console-app-cron
 
 # Create the log file to be able to run tail
-RUN touch /var/log/syslog
+RUN touch /var/log/cron.log
 
 #Install Cron
+sudo su
 RUN apt-get update
 RUN apt-get -y install cron
 
 
 # Run the command on container startup
-CMD cron && tail -f /var/log/syslog
+CMD cron && tail -f /var/log/cron.log
