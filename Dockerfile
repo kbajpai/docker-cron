@@ -10,7 +10,7 @@ RUN chmod 0644 /etc/cron.d/consoleapp/console-app-cron
 RUN touch /var/log/cron.log
 
 #Install Cron
-sudo su
+RUN sudo su
 RUN apt-get update
 RUN apt-get -y install cron
 
